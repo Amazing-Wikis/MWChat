@@ -50,12 +50,10 @@
 		"chat"
 	],
 	"LogActionsHandlers": {
-		"chat/*": "LogFormatter",
-		"privatechat/*": "LogFormatter"
+		"chat/*": "LogFormatter"
 	},
 	"FilterLogTypes": {
-		"chat": true,
-		"privatechat": true
+		"chat": true
 	},
 	"AutoloadClasses": {
 		"ChatGetNewAPI": "includes/api/ChatGetNewAPI.php",
@@ -116,7 +114,6 @@
 	},
 	"DefaultUserOptions": {
 		"chat-ping-mention": 1,
-		"chat-ping-pm": 1,
 		"chat-notify-mention": 1
 	},
 	"manifest_version": 1
