@@ -123,15 +123,6 @@
 	padding: 2px;
 }
 
-.mwchat-item-avatar {
-	width: 26px;
-	vertical-align: top;
-}
-
-.mwchat-item-avatar img {
-	margin-left: 5px;
-	margin-right: 5px;
-}
 
 .mwchat-item-message * {
 	display: inline;
@@ -154,10 +145,6 @@
 
 .mwchat-message.system td {
 	padding-left: 3em;
-}
-
-.mwchat-useritem-window .mwchat-avatar {
-	margin-right: 2px;
 }
 
 .mwchat-useritem img {
@@ -187,13 +174,6 @@
 	position: relative;
 }
 
-.mwchat-avatar-replacement {
-	color: white;
-	display: inline-block;
-	width: 16px;
-	height: 16px;
-	text-align: center;
-}
 
 #mwchat-wrapper {
 	background-color: white;

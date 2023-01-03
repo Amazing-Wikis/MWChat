@@ -18,7 +18,6 @@ class SpecialChatTemplate extends QuickTemplate {
 					<table id="mwchat-table">
 						<tr class="mwchat-message"> <?php // ensures columns are appropriately wide ?>
 							<td class="mwchat-item-user"></td>
-							<td class="mwchat-item-avatar"></td>
 							<td class="mwchat-item-messagecell"></td>
 						</tr>
 					</table>

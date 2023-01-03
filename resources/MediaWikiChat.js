@@ -181,7 +181,7 @@ var MediaWikiChat = {
 			);
 		}
 
-		for ( var pmTimestamp in data.pms ) {
+		/*for ( var pmTimestamp in data.pms ) {
 			var pm = data.pms[pmTimestamp];
 
 			MediaWikiChat.addPrivateMessage(
@@ -193,7 +193,7 @@ var MediaWikiChat = {
 			var div = $( '#' + MediaWikiChat.safe( pm.conv ) + ' .mwchat-useritem-content' );
 			var objDiv = $( '#' + MediaWikiChat.safe( pm.conv ) + ' .mwchat-useritem-content' );
 			objDiv.animate( { 'scrollTop': div[0].scrollHeight }, 1000 );
-		}
+		}*/
 
 		for ( var kickTimestamp in data.kicks ) {
 			var kick = data.kicks[kickTimestamp];
@@ -400,7 +400,7 @@ var MediaWikiChat = {
 		return '#' + one + two + three;
 	},
 
-	addPrivateMessage: function( userId, convwith, message, timestamp ) {
+	/*addPrivateMessage: function( userId, convwith, message, timestamp ) {
 		var user = MediaWikiChat.userData[userId];
 		var convwithE = MediaWikiChat.safe( convwith );
 
@@ -427,7 +427,7 @@ var MediaWikiChat = {
 		if ( userId != mw.user.getId() ) { // don't flash if we sent the message
 			MediaWikiChat.flashPrivate( mw.message( 'chat-private-message-from', user.name, user.gender ).text(), message );
 		}
-	},
+	},*/
 
 	greyscale: function( element, microseconds ) {
 		element = element.children( '.mwchat-useritem-header' );
@@ -446,9 +446,9 @@ var MediaWikiChat = {
 			var minutes = microseconds / 6000;
 			if ( minutes > 10 ) {
 				tooltip = mw.message( 'chat-idle-minutes', Math.round( minutes ), mw.user.getName() ).text();
-			} else {
+			} /*else {
 				tooltip = mw.message( 'chat-private-message' ).text();
-			}
+			}*/
 		}
 
 		$( element ).attr( 'title', tooltip );
@@ -532,11 +532,11 @@ var MediaWikiChat = {
 		}
 
 		html += '</span>';
-		html += '<div class="mwchat-useritem-window" style="display:none;">';
-		html += '<div class="mwchat-useritem-content"></div>';
-		html += '<input type="text" placeholder="' + mw.message( 'chat-type-your-private-message' ).text() + '" />';
-		html += '</div>';
-		html += '</div>';
+		//html += '<div class="mwchat-useritem-window" style="display:none;">';
+		//html += '<div class="mwchat-useritem-content"></div>';
+		//html += '<input type="text" placeholder="' + mw.message( 'chat-type-your-private-message' ).text() + '" />';
+		//html += '</div>';
+		//html += '</div>';
 
 		$( '#mwchat-users' ).append( html );
 		$( '#mwchat-users #' + userE ).fadeIn();
@@ -600,7 +600,7 @@ var MediaWikiChat = {
 
 		var toid = $( this ).parents( '.mwchat-useritem' ).attr( 'data-id' );
 
-		if ( e.which == 13 ) {
+		/*if ( e.which == 13 ) {
 			$.ajax( {
 				type: 'POST',
 				url: mw.config.get( 'wgScriptPath' ) + '/api.php',
@@ -611,7 +611,7 @@ var MediaWikiChat = {
 			} );
 
 			$( this ).val( '' );
-		}
+		}*/
 	},
 
 	addMe: function() {
@@ -645,7 +645,7 @@ var MediaWikiChat = {
 		}
 	},
 
-	flashPrivate: function( title, message ) {
+	/*flashPrivate: function( title, message ) {
 		if ( !MediaWikiChat.focussed ) {
 			if ( mw.user.options.get( 'chat-ping-pm' ) ) {
 				MediaWikiChat.audio( 'pm' );
@@ -655,7 +655,7 @@ var MediaWikiChat = {
 				MediaWikiChat.notify( title, message );
 			}
 		}
-	},
+	},*/
 
 	flashMention: function( title, message ) {
 		if ( !MediaWikiChat.focussed ) {

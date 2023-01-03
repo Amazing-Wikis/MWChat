@@ -62,7 +62,7 @@ class ChatSendAPI extends ApiBase {
 					CheckUserHooks::updateCheckUserData( $rc );
 				}
 
-				MediaWikiChat::deleteEntryIfNeeded();
+				//MediaWikiChat::deleteEntryIfNeeded();
 				MediaWikiChat::updateAway( $user );
 
 				GetNewWorker::execute( $result, $user, $this->getMain() );

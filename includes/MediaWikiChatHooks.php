@@ -62,10 +62,10 @@ class MediaWikiChatHooks {
 						background-position: right 1em center;
 						background-repeat: no-repeat;
 						word-wrap: break-word;";
-					if ( class_exists( 'SocialProfileHooks' ) ) {
+					/*if ( class_exists( 'SocialProfileHooks' ) ) {
 						$avatar = MediaWikiChat::getAvatar( $id );
 						$style .= "background-image: url($avatar);";
-					}
+					}*/
 					if ( $away > 120000 ) {
 						$style .= "-webkit-filter: grayscale(1); /* old webkit */
 							-webkit-filter: grayscale(100%); /* new webkit */
@@ -111,11 +111,11 @@ class MediaWikiChatHooks {
 			'label-message' => 'tog-chat-ping-mention',
 			'section' => 'misc/chat',
 		];
-		$preferences['chat-ping-pm'] = [
+		/*$preferences['chat-ping-pm'] = [
 			'type' => 'toggle',
 			'label-message' => 'tog-chat-ping-pm',
 			'section' => 'misc/chat',
-		];
+		];*/
 		$preferences['chat-ping-message'] = [
 			'type' => 'toggle',
 			'label-message' => 'tog-chat-ping-message',
@@ -132,11 +132,11 @@ class MediaWikiChatHooks {
 			'label-message' => 'tog-chat-notify-mention',
 			'section' => 'misc/chat',
 		];
-		$preferences['chat-notify-pm'] = [
+		/*$preferences['chat-notify-pm'] = [
 			'type' => 'toggle',
 			'label-message' => 'tog-chat-notify-pm',
 			'section' => 'misc/chat',
-		];
+		];*/
 		$preferences['chat-notify-message'] = [
 			'type' => 'toggle',
 			'label-message' => 'tog-chat-notify-message',

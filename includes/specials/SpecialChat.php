@@ -65,7 +65,6 @@ class SpecialChat extends SpecialPage {
 			$out->addJsConfigVars(
 				[
 					'wgChatKicks' => $wgChatKicks,
-					'wgChatSocialAvatars' => class_exists( 'SocialProfileHooks' ), // has SocialProfile been installed?
 					'wgChatLinkUsernames' => $wgChatLinkUsernames,
 					'wgChatMeCommand' => $wgChatMeCommand,
 					'wgChatMaxMessageLength' => $wgChatMaxMessageLength,

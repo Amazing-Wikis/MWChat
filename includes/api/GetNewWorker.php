@@ -81,7 +81,8 @@ class GetNewWorker {
 
 				$users[$id] = true; // ensure message sender is in users list
 
-			} elseif ( $row->chat_type == MediaWikiChat::TYPE_PM
+			}
+			/*elseif ( $row->chat_type == MediaWikiChat::TYPE_PM
 				&& (
 					$row->chat_user_id == $user->getId()
 					|| $row->chat_to_id == $user->getId()
@@ -105,7 +106,8 @@ class GetNewWorker {
 				$users[$fromid] = true; // ensure pm sender is in users list
 				$users[$toid] = true; // ensure pm receiver is in users list
 
-			} elseif ( $row->chat_type == MediaWikiChat::TYPE_KICK ) {
+			}*/
+			elseif ( $row->chat_type == MediaWikiChat::TYPE_KICK ) {
 				if ( $row->chat_to_id == $user->getId() ) {
 					$result->addValue( $mName, 'kick', true );
 				}
@@ -137,9 +139,9 @@ class GetNewWorker {
 			$idString = strval( $id );
 
 			$result->addValue( [ $mName, 'users', $idString ], 'name', $userObject->getName() );
-			if ( class_exists( 'SocialProfileHooks' ) ) { // is SocialProfile installed?
+			/*if ( class_exists( 'SocialProfileHooks' ) ) { // is SocialProfile installed?
 				$result->addValue( [ $mName, 'users', $idString ], 'avatar', MediaWikiChat::getAvatar( $id ) );
-			}
+			}*/
 			if ( array_key_exists( $id, $onlineUsers ) ) {
 				$result->addValue( [ $mName, 'users', $idString ], 'online', 'true' );
 				$result->addValue( [ $mName, 'users', $idString ], 'away', $onlineUsers[$id] );
@@ -148,8 +150,8 @@ class GetNewWorker {
 			if ( in_array( 'chatmod', $groups ) || in_array( 'sysop', $groups ) ) {
 				$result->addValue( [ $mName, 'users', $idString ], 'mod', 'true' );
 			}
-			$gender = $genderCache->getGenderOf( $userObject );
-			$result->addValue( [ $mName, 'users', $idString, ], 'gender', $gender );
+			//$gender = $genderCache->getGenderOf( $userObject );
+			//$result->addValue( [ $mName, 'users', $idString, ], 'gender', $gender );
 		}
 
 		$result->addValue( $mName, 'now', MediaWikiChat::now() );

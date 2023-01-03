@@ -11,7 +11,7 @@ use MediaWiki\User\UserIdentity;
 class MediaWikiChat {
 
 	public const TYPE_MESSAGE = 0;
-	public const TYPE_PM = 1;
+	//public const TYPE_PM = 1;
 	public const TYPE_BLOCK = 2;
 	public const TYPE_UNBLOCK = 3;
 	public const TYPE_KICK = 4;
@@ -31,14 +31,14 @@ class MediaWikiChat {
 	 *
 	 * @param int $id user ID
 	 * @return string avatar image path
-	 */
+	 
 	static function getAvatar( $id ) {
 		global $wgUploadPath;
 
 		$avatar = new wAvatar( $id, 's' );
 
 		return $wgUploadPath . '/avatars/' . $avatar->getAvatarImage();
-	}
+	}*/
 
 	/**
 	 * Send a message to the database that a user has been (un)blocked
