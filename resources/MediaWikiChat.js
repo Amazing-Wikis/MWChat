@@ -349,10 +349,10 @@ var MediaWikiChat = {
 			} else {
 				html += mw.html.escape( fromUser.name );
 			}
-			html += '</td><td rowspan=1 class="mwchat-item-avatar mwchat-rowspan">';
-			if ( mw.config.get( 'wgChatSocialAvatars' ) ) {
+			//html += '</td><td rowspan=1 class="mwchat-item-avatar mwchat-rowspan">';
+			/*if ( mw.config.get( 'wgChatSocialAvatars' ) ) {
 				html += '<img src="' + fromUser.avatar + '" /></td>';
-			}
+			}*/
 		}
 		html += '<td class="mwchat-item-messagecell"><span class="mwchat-item-message"';
 		if ( mention ) {

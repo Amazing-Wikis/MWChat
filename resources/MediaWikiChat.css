@@ -59,6 +59,7 @@
 
 .mwchat-item-messagecell {
 	width: 77%;
+	background-color: lightgray;
 }
 
 .mwchat-item-timestamp-container {
