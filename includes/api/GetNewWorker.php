@@ -147,9 +147,10 @@ class GetNewWorker {
 				$result->addValue( [ $mName, 'users', $idString ], 'away', $onlineUsers[$id] );
 			}
 			$groups = $userGroupManager->getUserGroups( $userObject );
-			if ( in_array( 'chatmod', $groups ) || in_array( 'sysop', $groups ) ) {
+			if ( $userObject->isAllowed('modchat') ) {
 				$result->addValue( [ $mName, 'users', $idString ], 'mod', 'true' );
 			}
+
 			//$gender = $genderCache->getGenderOf( $userObject );
 			//$result->addValue( [ $mName, 'users', $idString, ], 'gender', $gender );
 		}
