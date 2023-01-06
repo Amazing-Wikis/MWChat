@@ -9,7 +9,7 @@
 	"descriptionmsg": "chat-desc",
 	"type": "specialpage",
 	"requires": {
-		"MediaWiki": ">=1.35.3"
+		"MediaWiki": ">=1.37"
 	},
 	"config": {
 		"ChatKicks": true,
@@ -24,6 +24,8 @@
 		"ChatMaxMessageLength": 1000
 	},
 	"SpecialPages": {
+		"createinviteonlychannel": "SpecialCreateInviteOnlyChannel",
+		"manageinviteonlychannel": "SpecialManageInviteOnlyChannel",
 		"Chat": {
 			"class": "SpecialChat",
 			"services": [
@@ -31,6 +33,25 @@
 				"UserGroupManager"
 			]
 		}
+	},
+	"AutoloadClasses": {
+		"ChatGetNewAPI": "includes/api/ChatGetNewAPI.php",
+		"ChatSendAPI": "includes/api/ChatSendAPI.php",
+		"ChatSendPMAPI": "includes/api/ChatSendPMAPI.php",
+		"ChatKickAPI": "includes/api/ChatKickAPI.php",
+		"GetNewWorker": "includes/api/GetNewWorker.php",
+		"SpecialChat": "includes/specials/SpecialChat.php",
+		"SpecialChatTemplate": "includes/templates/SpecialChatTemplate.php",
+		"MediaWikiChat": "includes/MediaWikiChat.php",
+		"MediaWikiChatHooks": "includes/MediaWikiChatHooks.php",
+		"SpecialCreateInviteOnlyChannel": "includes/SpecialCreateInviteOnlyChannel.php",
+		"SpecialManageInviteOnlyChannel": "includes/SpecialManageInviteOnlyChannel.php"
+	},
+	"Hooks": {
+		"UserGroupsChanged": "MediaWikiChatHooks::onUserRights",
+		"LoadExtensionSchemaUpdates": "MediaWikiChatHooks::onLoadExtensionSchemaUpdates",
+		"SkinBuildSidebar": "MediaWikiChatHooks::fnNewSidebarItem",
+		"GetPreferences": "MediaWikiChatHooks::wfPrefHook"
 	},
 	"MessagesDirs": {
 		"MediaWikiChat": [
@@ -54,23 +75,6 @@
 	},
 	"FilterLogTypes": {
 		"chat": true
-	},
-	"AutoloadClasses": {
-		"ChatGetNewAPI": "includes/api/ChatGetNewAPI.php",
-		"ChatSendAPI": "includes/api/ChatSendAPI.php",
-		"ChatSendPMAPI": "includes/api/ChatSendPMAPI.php",
-		"ChatKickAPI": "includes/api/ChatKickAPI.php",
-		"GetNewWorker": "includes/api/GetNewWorker.php",
-		"SpecialChat": "includes/specials/SpecialChat.php",
-		"SpecialChatTemplate": "includes/templates/SpecialChatTemplate.php",
-		"MediaWikiChat": "includes/MediaWikiChat.php",
-		"MediaWikiChatHooks": "includes/MediaWikiChatHooks.php"
-	},
-	"Hooks": {
-		"UserGroupsChanged": "MediaWikiChatHooks::onUserRights",
-		"LoadExtensionSchemaUpdates": "MediaWikiChatHooks::onLoadExtensionSchemaUpdates",
-		"SkinBuildSidebar": "MediaWikiChatHooks::fnNewSidebarItem",
-		"GetPreferences": "MediaWikiChatHooks::wfPrefHook"
 	},
 	"ResourceFileModulePaths": {
 		"localBasePath": "",

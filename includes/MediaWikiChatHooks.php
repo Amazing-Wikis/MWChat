@@ -34,8 +34,8 @@ class MediaWikiChatHooks {
 
 		$updater->addExtensionTable( 'chat', $dir . 'chat.sql', true );
 		$updater->addExtensionTable( 'chat_users', $dir . 'chat_users.sql', true );
-		$updater->addExtensionField( 'chat_users', 'cu_away', $dir . 'cu_away.sql' );
-		$updater->modifyExtensionField( 'chat_users', 'cu_away', $dir . 'cu_away_new.sql' );
+		$updater->addExtensionTable( 'chat_inviteOnly', $dir . 'chat_inviteOnly.sql', true );
+		$updater->addExtensionTable( 'chat_inviteOnly_users', $dir . 'chat_inviteOnly_users.sql', true );
 	}
 
 	/**
