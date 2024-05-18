@@ -1,7 +1,6 @@
 CREATE TABLE /*_*/chat (
   mwc_message_id bigint NOT NULL PRIMARY KEY,
   mwc_timestamp datetime, -- timestamp of chat message 
-  mwc_user_id int(10), -- replace by mwc_actor_id
   mwc_actor_id bigint, -- foreign key to actor.actor_id
   mwc_message text, -- actual chat message
   mwc_message_visibility int(10), -- visibility as public [0] or private [1]
